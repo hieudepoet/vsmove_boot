@@ -1,0 +1,22 @@
+{
+  "placeholderImages": [
+    {
+      "id": "blog-1",
+      "description": "Abstract blockchain visualization",
+      "imageUrl": "https://picsum.photos/seed/blog1/1200/630",
+      "imageHint": "blockchain abstract"
+    },
+    {
+      "id": "blog-2",
+      "description": "Person coding on a laptop",
+      "imageUrl": "https://images.unsplash.com/photo-1667984436035-bb91b6109ba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2RpbmclMjBkZXZlbG9wZXJ8ZW58MHx8fHwxNzU5NzQ4MjczfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coding developer"
+    },
+    {
+      "id": "blog-3",
+      "description": "Futuristic digital network connections",
+      "imageUrl": "https://picsum.photos/seed/blog3/1200/630",
+      "imageHint": "network technology"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+A simple idea for modelization smart contract
