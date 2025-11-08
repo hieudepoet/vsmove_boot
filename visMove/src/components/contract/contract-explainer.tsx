@@ -70,7 +70,9 @@ import { getFunctionExplanation } from '@/lib/actions';
 import { getModuleMove, getPackageMove } from './getMoveCode';
 
 // Mock Data
-import { mockContractCode, mockFunction } from '@/lib/mock-data';
+// import { mockContractCode, mockFunction } from '@/lib/mock-data';
+import { useCurrentAccount, useSignAndExecuteTransaction } from '@mysten/dapp-kit';
+import {Transaction} from '@mysten/sui/transactions';
 
 const FormSchema = z.object({
   packageId: z.string({ message: 'Please enter a valid package id' }),
@@ -102,6 +104,9 @@ export default function ContractExplainer() {
   // Network & Error
   const { currNetwork } = useNetwork();
   const [error, setError] = useState<string | null>(null);
+  const currAccount = useCurrentAccount();
+  const {mutate: signAndExecute} = useSignAndExecuteTransaction();
+  
 
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
@@ -116,7 +121,17 @@ export default function ContractExplainer() {
     setPackageCode(packageCode);
     setModules(Array.from(packageCode.keys()));
   }
+  const payment = async () => {
+    const tx = new Transaction();
+    const amount = 1_000;
+    const vsmove = "0xf2b8341fc93d683292ba428dccf83ba443c15ee19b9f0719bdd0a7f75218c926";
+    const coin = tx.splitCoins(tx.gas, [amount]);
+    tx.transferObjects([coin], vsmove);
+   
+  }
   const handleExplainSubmit: SubmitHandler<FormValues> = async (props) => {
+    //check is it exist or do payment
+
     await getContractCode(props.packageId);
 
     setIsContractVisible(true);
@@ -312,7 +327,9 @@ export default function ContractExplainer() {
                 </Card>
 
                 {viewCoinFlow? 
-                <div>
+                <div 
+                  className='border border-1px border-white rounded-md p-5'
+                  >
                   {explanationResult.coinFlow}
                 </div>
                 :

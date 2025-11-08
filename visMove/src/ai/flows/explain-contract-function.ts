@@ -56,7 +56,7 @@ const prompt = ai.definePrompt({
 
   1.  Provide a short explanation of the function's logic and purpose about 4-7 lines with no break down. Focus on clarity and avoid unnecessary jargon.
   2.  Provide a short explaination of coin or money flow for non-technical user when using function, if function don't need coin, return No Need Coin 
-  3.  Generate a short UML sequence diagram representing the function's execution flow, short code start with @startuml and end with @enduml.
+  3.  Generate a short UML sequence diagram representing the function's execution flow by short words, code start with @startuml and end with @enduml.
   4.  Use the identifyConcepts tool to identify any concepts in your explanation that a non-technical user might struggle with. List these concepts explicitly.
 
   Make sure your explanation is thorough and accurate. The UML sequence diagram should visually represent the function's steps. The identified concepts should be helpful for someone seeking to understand the contract.
