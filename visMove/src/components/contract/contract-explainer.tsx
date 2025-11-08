@@ -82,6 +82,10 @@ import {Transaction} from '@mysten/sui/transactions';
 const PACKAGE_ID = process.env.NEXT_PUBLIC_PACKAGE_ID || '0x0';
 const REGISTRY_ID = process.env.NEXT_PUBLIC_REGISTRY_ID || '0x0';
 
+// Smart Contract Constants
+const PACKAGE_ID = process.env.NEXT_PUBLIC_PACKAGE_ID || '0x0';
+const REGISTRY_ID = process.env.NEXT_PUBLIC_REGISTRY_ID || '0x0';
+
 const FormSchema = z.object({
   packageId: z.string({ message: 'Please enter a valid package id' }),
 });
@@ -117,14 +121,20 @@ export default function ContractExplainer() {
   const { currNetwork } = useNetwork();
   const [error, setError] = useState<string | null>(null);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   const currAccount = useCurrentAccount();
   const {mutate: signAndExecute} = useSignAndExecuteTransaction();
   
 =======
+=======
+>>>>>>> Stashed changes
   
   // Smart contract state
   const [savedExplanations, setSavedExplanations] = useState<any[]>([]);
   const [userProfile, setUserProfile] = useState<any>(null);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
   const form = useForm<FormValues>({
